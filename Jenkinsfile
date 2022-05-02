@@ -12,16 +12,11 @@ pipeline {
         }
 
       stage('Test') {
-        steps {
-          withEnv(["CHROME_BIN=/usr/bin/chromium-browser"]) {
-            sh 'ng test --progress=false --watch false'
-          }
-          junit '**/test-results.xml'
-        }
+        steps { sh 'npm install' }
       }
 
         stage('Build') {
-            steps { sh 'npm run build' }
+            steps { sh 'npm run test-headless' }
         }
     }
 }
