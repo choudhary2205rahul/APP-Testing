@@ -21,11 +21,11 @@ pipeline {
     }
 
     stage('Snyk Scan') {
-      steps { sh 'npm run sonar-scanner' }
+      steps { sh 'npm run snyk-scanner' }
     }
 
     stage('Build') {
-      steps { sh 'npm run snyk-scanner' }
+      steps { sh 'npm run build' }
     }
 
   }
