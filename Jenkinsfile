@@ -12,11 +12,11 @@ pipeline {
         }
 
       stage('Test') {
-        steps { sh 'npm install' }
+        steps { sh 'npm run test-headless' }
       }
 
         stage('Build') {
-            steps { sh 'npm run test-headless' }
+            steps { sh 'npm run build' }
         }
     }
 }
