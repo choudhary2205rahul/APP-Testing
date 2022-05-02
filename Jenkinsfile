@@ -16,11 +16,7 @@ pipeline {
     }
 
     stage('Sonar Scan') {
-      steps { sh 'sonar-scanner \\\n' +
-        '  -Dsonar.projectKey=APP-Testing \\\n' +
-        '  -Dsonar.sources=. \\\n' +
-        '  -Dsonar.host.url=http://localhost:9000 \\\n' +
-        '  -Dsonar.login=abe2ad51ccf354b1c96e453d6e3266df1b620d42' }
+      steps { sh 'npm run sonar-scanner' }
     }
 
 
