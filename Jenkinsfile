@@ -7,12 +7,12 @@ pipeline {
     }
 
     stages {
-        stage('Install Dependencies') {
+        stage('Dependencies') {
             steps { sh 'npm install' }
         }
 
         stage('Test') {
-            steps { sh 'npm run test' }
+            steps { sh 'npm run test --progress false --watch false' }
         }
 
         stage('Build') {
