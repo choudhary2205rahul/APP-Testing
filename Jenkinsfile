@@ -1,13 +1,13 @@
 pipeline {
 
-    agent { label 'standard' }
+  agent any
 
     tools {
-        nodejs 'npm'
+        nodejs 'node'
     }
 
     stages {
-        stage('Install') {
+        stage('Install Dependencies') {
             steps { sh 'npm install' }
         }
 
