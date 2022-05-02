@@ -25,7 +25,7 @@ pipeline {
     }
 
     stage('Build') {
-      steps { sh 'npm run snyk test' }
+      steps { sh 'npm run snyk-scanner' }
     }
 
   }
