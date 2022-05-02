@@ -7,6 +7,7 @@ pipeline {
   }
 
   stages {
+
     stage('Dependencies') {
       steps { sh 'npm install' }
     }
@@ -19,9 +20,9 @@ pipeline {
       steps { sh 'npm run sonar-scanner' }
     }
 
-
     stage('Build') {
       steps { sh 'npm run build' }
     }
+
   }
 }
